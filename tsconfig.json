@@ -7,7 +7,7 @@
  
     /* 기본 옵션 */
     "incremental": true,                      /* 증분 컴파일 설정 여부 */
-    "target": "es5",                          /* 사용할 특정 ECMAScript 버전 설정: 'ES3' (기본), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 혹은 'ESNEXT'. */
+    "target": "es6",                          /* 사용할 특정 ECMAScript 버전 설정: 'ES3' (기본), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 혹은 'ESNEXT'. */
     "module": "esnext",                       /* 모듈을 위한 코드 생성 설정: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
     "lib": [
       "dom",                                  /* DOM APIs 에 대한 타입스크립트 지원 */
@@ -82,6 +82,6 @@
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   /* "files" 와 "include" 모두 지정되어 있지 않다면 컴파일러는 기본적으로 "exclude" 속성을 사용하여 제외된 것은 제외하고 모든 TypeScript (.ts,.d.ts 그리고 .tsx) 파일을 포함하는 디렉토리와 하위 디렉토리에 포함 */
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules","src/*.ts"],
   /* "exclude" 속성에 디렉토리가 지정되지 있지 않다면 기본적으로 node_modules, bower_components, jspm_packages 그리고 <outDir>를 제외 */  
 }
