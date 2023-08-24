@@ -1,0 +1,31 @@
+.align_rt {
+    width: 724px;
+    margin-right: 31px;
+    display: block;
+}
+
+.inqury {
+    background-color: #e8e8e8;
+    display: block;
+}
+
+.tabs {
+    background: #fff;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tab_btn {
+    display: inline-block;
+    float: none;
+    position: relative;
+    width: auto;
+    height: 40px;
+    margin-right: 22px;
+    font-size: 18px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.56);
+    text-align: left;
+    cursor: pointer;
+}
