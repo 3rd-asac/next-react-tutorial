@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import styles from './page.module.css';
+import Logo from '../../public/assets/user.svg';
 
 export default function Home() {
   return (
@@ -29,14 +30,12 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+        <div className="flex flex-col relative">
+          <Logo width="50" height="50" fill="black" />
+          <h1 className="text-3xl text-indigo-600 font-bold underline">
+            Next-React-Tutorial
+          </h1>
+        </div>
       </div>
 
       <div className={styles.grid}>
@@ -91,5 +90,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
