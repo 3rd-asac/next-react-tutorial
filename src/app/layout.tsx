@@ -5,17 +5,18 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Week5 Assignment",
-    description: "ASAC 3rd Web Full-stack week5 Assignment",
+  title: "Week5 Assignment",
+  description: "ASAC 3rd Web Full-stack week5 Assignment",
 };
 
-export default function RootLayout(
-        { children }: {
-            children: React.ReactNode;
-        }) {
-    return (
-            <html lang="en">
-            <body className={inter.className}>{children}</body>
-            </html>
-    );
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang='en'>
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
 }
