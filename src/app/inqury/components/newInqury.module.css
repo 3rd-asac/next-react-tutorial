@@ -1,0 +1,58 @@
+.tab_each {
+    border-top: none;
+}
+
+.tab_each section {
+    background-color: #fff;
+}
+
+.alert_top {
+    padding: 43px 0 0 0;
+    background: #fff;
+}
+.phone_block {
+    position: relative;
+}
+
+.tab_each b {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+@media (min-width: 300px) {
+    .inp_wrap {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 8px 14px 8px 16px;
+    }
+}
+.inp_wrap {
+    position: relative;
+    height: 48px;
+    border-radius: 4px;
+}
+
+.phone_input {
+    margin-top: 5px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+@media (min-width: 300px) {
+    .tab_each .alert_top p {
+        border-radius: 0;
+        background: #fff;
+        padding: 0 0;
+        font-size: 16px;
+        line-height: normal;
+        color: rgba(0, 0, 0, 0.56);
+        text-align: left;
+    }
+}
+
+@media (min-width: 300px) {
+    .info_wrap {
+        margin-bottom: 0;
+        padding: 39px 0 46px 0;
+    }
+}

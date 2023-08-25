@@ -29,3 +29,18 @@
     text-align: left;
     cursor: pointer;
 }
+
+.tab_btnRed {
+    display: inline-block;
+    float: none;
+    position: relative;
+    width: auto;
+    height: 40px;
+    margin-right: 22px;
+    font-size: 18px;
+    line-height: normal;
+    color: red;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 2px solid red;
+}
