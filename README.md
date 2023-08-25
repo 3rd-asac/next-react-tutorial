@@ -6,7 +6,8 @@
 
 - **폴더 구조**
     
-    ![Untitled](wanted%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%206b41d86ae13c46ecbfd90023c241a33e/Untitled.png)
+    ![Untitled](https://github.com/3rd-asac/next-react-tutorial/assets/101400650/3eb3feb5-f860-489e-8c5b-707cd58e87ad)
+
     
 
 1. home 페이지를 header, main, footer로 분할
@@ -43,8 +44,9 @@
         
         
         `MainArticle_1.tsx` , `MainArticle_2.tsx` , `MainArticle_3.tsx` 생성
+        ![Untitled 1](https://github.com/3rd-asac/next-react-tutorial/assets/101400650/e3bb0f87-6229-4284-9998-daa0e583e3ca)
+
         
-        ![Untitled](wanted%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%206b41d86ae13c46ecbfd90023c241a33e/Untitled%201.png)
         
     2.  `Main.tsx` 에 다음과 같이 구성
         
@@ -95,8 +97,11 @@
         	<Blue></Blue>
         </Red>
         ```
+
+       ![Untitled 2](https://github.com/3rd-asac/next-react-tutorial/assets/101400650/66c0b720-bbbd-4ee1-b30c-49afe8b398cd)
         
-        ![Untitled](wanted%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%206b41d86ae13c46ecbfd90023c241a33e/Untitled%202.png)
+
+
         
         - 코드
             
@@ -160,4 +165,5 @@
 
 - **결과**
 
-![Untitled](wanted%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%206b41d86ae13c46ecbfd90023c241a33e/Untitled%203.png)
+![Untitled 3](https://github.com/3rd-asac/next-react-tutorial/assets/101400650/f4418e1f-719f-4560-98c5-8137c6f2da17)
+
