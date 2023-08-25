@@ -4,6 +4,15 @@
 
 .tab_each section {
     background-color: #fff;
+    display: block;
+}
+
+.tab_each section select {
+    width: 100%;
+    display: block;
+    margin: 0;
+    height: 48px;
+    margin-bottom: 46px;
 }
 
 .alert_top {
@@ -15,6 +24,7 @@
 }
 
 .tab_each b {
+    display: block;
     margin-bottom: 20px;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.56);
@@ -50,6 +60,9 @@
     }
 }
 
+.info_wrap {
+    display: block;
+}
 @media (min-width: 300px) {
     .info_wrap {
         margin-bottom: 0;

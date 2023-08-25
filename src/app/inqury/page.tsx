@@ -45,13 +45,20 @@ function Inquiry() {
         );
     };
 
+    const BlowTab = () => {
+        if (selectedIdx === 0) {
+            return <MyInqury />;
+        } else {
+            return <NewInqury />;
+        }
+    };
+
     return (
         <div>
             <div className={styles.align_rt}>
                 <div className={styles.inqury}>
                     <Tabs items={items} />
-                    <MyInqury />
-                    <NewInqury />
+                    <BlowTab />
                 </div>
             </div>
         </div>
