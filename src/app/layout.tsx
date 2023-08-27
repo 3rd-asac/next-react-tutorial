@@ -1,7 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
+import Header from './components/header';
+import Carousel from './components/carousel';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -16,8 +17,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>{children}</body>
-			<h1>안녕</h1>
+			<body className={inter.className}>
+				<Header />
+				<Carousel />
+				{children}
+			</body>
 		</html>
 	);
 }
