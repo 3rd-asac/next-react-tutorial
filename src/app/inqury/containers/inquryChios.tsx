@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import styles from "./inquryChios.module.css";
+import styles from "./module/inquryChios.module.css";
 
 export const roomList = [
     { value: "0", text: "카테고리유형을 선택하세요." },

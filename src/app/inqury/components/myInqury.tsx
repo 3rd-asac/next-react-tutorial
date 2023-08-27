@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./myInqury.module.css";
+import styles from "./module/myInqury.module.css";
 
 function MyInqury() {
     const [inquries, SetInquries] = useState([]);

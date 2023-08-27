@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, SyntheticEvent } from "react";
-import styles from "./newInqury.module.css";
+import styles from "./module/newInqury.module.css";
 import InquryChios from "../containers/inquryChios";
 import InquryText from "../containers/inquryText";
 

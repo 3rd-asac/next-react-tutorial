@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import styles from "./inquryText.module.css";
+import styles from "./module/inquryText.module.css";
 interface InquryTextProps {
     textareaRef: React.RefObject<HTMLTextAreaElement>;
 }
