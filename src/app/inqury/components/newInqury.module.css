@@ -10,17 +10,33 @@
 .tab_each section select {
     width: 100%;
     display: block;
+    padding: 0 12px;
+    color: rgba(0, 0, 0, 0.56);
     margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     height: 48px;
     margin-bottom: 46px;
+
+    background: rgb(250, 250, 250)
+        url(//image.goodchoice.kr/images/web_v3/ico_arr_down_4.png) right 10px
+        top 50% no-repeat;
+    background-size: 18px auto;
+    cursor: pointer;
+    appearance: none;
 }
 
 .alert_top {
     padding: 43px 0 0 0;
     background: #fff;
 }
+
 .phone_block {
     position: relative;
+}
+
+.email_block {
+    position: relative;
+    margin-top: 45px;
 }
 
 .tab_each b {
@@ -45,6 +61,14 @@
 .phone_input {
     margin-top: 5px;
     font-size: 18px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+.email_input {
+    margin-top: 5px;
+    font-size: 18px;
+    width: 100%;
     color: rgba(0, 0, 0, 0.56);
 }
 
@@ -114,4 +138,14 @@
         width: 144px;
         height: 48px;
     }
+}
+
+.phone_input:focus {
+    outline: none;
+}
+.email_input:focus {
+    outline: none;
+}
+.text_wraparea {
+    outline: none;
 }

@@ -26,8 +26,10 @@ export const inqList = [
 ];
 
 function NewInqury() {
-    const phoneRef = useRef<HTMLInputElement>(null);
-    const [textHide, setTextHide] = useState(false);
+    const [isUlVisible, setUlVisible] = useState(true);
+    // 폰과 텍스트는 선택사항이므로 없어도 괜찮다.
+    const phoneRef = useRef<HTMLInputElement | null>(null);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
@@ -38,9 +40,6 @@ function NewInqury() {
         console.log("email_text : " + form.email_text.value);
         console.log("questionText : " + form.questionTextarea.value);
     };
-
-    const [isUlVisible, setUlVisible] = useState(true);
-    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleUlClick = () => {
         setUlVisible(false);
@@ -96,7 +95,7 @@ function NewInqury() {
                             />
                         </p>
                     </div>
-                    <div className="email_block">
+                    <div className={styles.email_block}>
                         <b>이메일</b>
                         <p className={styles.inp_wrap}>
                             <input
