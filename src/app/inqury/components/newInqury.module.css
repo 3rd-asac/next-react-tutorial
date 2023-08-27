@@ -31,31 +31,6 @@
     }
 }
 
-.placeholder_txt {
-    /* display: none; */
-    padding: 33px 32px;
-    font-size: 18px;
-    line-height: 29px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: rgba(0, 0, 0, 0.38);
-}
-
-.text_wraparea {
-    width: 100%;
-    height: 272px;
-    padding: 33px 32px;
-    border-radius: 4px;
-    font-size: 18px;
-    line-height: 29px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.56);
-    box-sizing: border-box;
-}
-
 .btn_wrap {
     padding: 40px 0 0 0;
     text-align: center;
@@ -75,8 +50,4 @@
         width: 144px;
         height: 48px;
     }
-}
-
-.text_wraparea {
-    outline: none;
 }
