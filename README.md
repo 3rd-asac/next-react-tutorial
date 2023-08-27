@@ -1,4 +1,8 @@
 ![image](https://github.com/3rd-asac/next-react-tutorial/assets/96914905/a3e4d3db-ef53-41fa-a982-09758272887a)
+./
+
+![image](https://github.com/3rd-asac/next-react-tutorial/assets/96914905/739420a2-d15b-4a54-bce0-20a983880b56)
+./asd
 
 # [과정 및 결과](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3)
 1. [Create Next App (Typescript) 생성](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=1f5749c07d6a4d2eb972ce9adeebc683&pm=s)
