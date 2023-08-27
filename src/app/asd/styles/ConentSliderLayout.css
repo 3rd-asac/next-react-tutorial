@@ -7,17 +7,22 @@
 
 .ContentBox_description {
   position: relative;
-  left: 7px;
-  bottom: 77px;
+  left: 0.5vw;
+  bottom: 13vw;
   /* font-weight: lighter; */
-  font-size: small;
+  font-size: 1.5vw;
   background: white;
   border-radius: 5px;
   color: black;
   text-align: left;
   padding: 0.5em 2em 1em 1.5em;
-  line-height: 1em;
-  width: 30vw;
+  line-height: 2.5vw;
+  width: 47vw;
+}
+
+.ContentBox_description h2 {
+  font-weight: bold;
+  font-size: 2vw;
 }
 
 .ContentBoxList {
@@ -42,4 +47,10 @@
 }
 
 .SliderButton {
+  position: absolute;
+  background-color: grey;
+  border-radius: 3vw;
+  font-size: 3vw;
+  opacity: 40%;
+  top: 26.5vw;
 }

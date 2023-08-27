@@ -1,26 +1,42 @@
 import logo from "../../../public/next.svg";
 import "./page.css";
 import ContentBoxListSlider from "./micro-components/ContentBoxListSlider";
+import Image from "next/image";
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-
+        <br />
+        <br />
+        <br />
+        <br />
         <ContentBoxListSlider />
-
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+        <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br />
       </header>
     </div>
   );
