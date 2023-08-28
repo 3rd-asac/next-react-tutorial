@@ -38,35 +38,54 @@ export const ImgList = () => {
 			src: 'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2132%2Fb670c0d8.jpg&w=1060&q=100',
 		},
 	];
-	const [count, setMove] = useState(0);
-	let test = [
-		`translate-x-[-5900px]`,
-		`translate-x-[-6960px]`,
-		`translate-x-[-8020px]`,
-		`translate-x-[-2720px]`,
-		`translate-x-[-3780px]`,
-		`translate-x-[-4840px]`,
-		`translate-x-[-5900px]`,
-		`translate-x-[-6960px]`,
-	];
+	const [move, setMove] = useState(-8020);
+	const [isChange, setChange] = useState(false);
+	// let test = [
+	// 	`flex translate-x-[-600px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-1660px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-2720px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-3780px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-4840px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-5900px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-6960px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-8020px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-9180px] transition duration-300 ease-in-out`,
+	// 	`flex translate-x-[-600px]`,
+	// ];
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setMove((count) => count + 1);
-			// console.log(move);
+			// console.log(isChange);
+			setMove((move) => move - 1060);
+			// setChange(true);
 		}, 2000);
 		return () => {
 			clearInterval(interval);
 		};
 	}, []);
 
-	useEffect(() => {
-		console.log(count);
-		if (count >= 8) setMove(0);
-	}, [count]);
+	// useEffect(() => {
+	// 	console.log(move);
+	// 	// if (move === 8) {
+	// 	// 	setChange(true);
+	// 	// }
+	// 	// if (move <= -10140) {
+	// 	// 	setChange(true);
+	// 	// 	setMove(-1660);
+	// 	// 	setChange(false);
+	// 	// }
+	// }, [move]);
+
+	// useEffect(() => {
+	// 	console.log(isChange);
+	// 	if (isChange) {
+	// 		console.log(isChange);
+	// 		// setChange(false);
+	// 	}
+	// }, [isChange]);
 	return (
 		<div>
 			<div
-				className={`flex ${test[count]} transition duration-300 ease-in-out`}>
+				className={`flex translate-x-[${move}px] transition duration-300 ease-in-out`}>
 				{images.map((image, key) => (
 					<Image
 						className='px-3'
@@ -78,7 +97,7 @@ export const ImgList = () => {
 					/>
 				))}
 			</div>
-			<p>{count}</p>
+			<p>{move}</p>
 		</div>
 	);
 };
