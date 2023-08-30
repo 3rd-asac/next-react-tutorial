@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 
 export const isValid = (type: string, data: string) => {
 	const passwordRegex =
@@ -47,10 +47,6 @@ export default function Signup() {
 	const [id, setId] = useState('');
 	const passwordObj = useRef({ password: '', isFocus: false });
 	const emailObj = useRef({ email: '', isFocus: false });
-
-	// const idRef = useRef<HTMLInputElement>(null);
-	// const passwordRef = useRef<HTMLInputElement>(null);
-	// const emailRef = useRef<HTMLInputElement>(null);
 
 	const [error, setError] = useState({ isError: false, message: '', type: '' });
 
@@ -127,7 +123,6 @@ export default function Signup() {
 								id='id'
 								value={id}
 								onChange={onChangeId}
-								// ref={idRef}
 								placeholder='아이디를 입력해주세요.'
 								className={`border-2 border-gray-200 rounded-md p-3 focus:outline-none ${
 									id.length ? 'focus:border-blue-500' : 'focus:border-red-500'
@@ -144,7 +139,6 @@ export default function Signup() {
 								type='password'
 								id='password'
 								onChange={onChangePassword}
-								// ref={passwordRef}
 								placeholder='비밀번호를 입력해주세요.'
 								className={`border-2 border-gray-200 rounded-md p-3 focus:outline-none ${
 									passwordObj.current.isFocus && error.isError
@@ -168,7 +162,6 @@ export default function Signup() {
 								type='email'
 								id='email'
 								onChange={onChangeEmail}
-								// ref={emailRef}
 								placeholder='이메일을 입력해주세요.'
 								className={`border-2 border-gray-200 rounded-md p-3 focus:outline-none ${
 									emailObj.current.isFocus && error.isError

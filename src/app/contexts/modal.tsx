@@ -1,13 +1,5 @@
 'use client';
-import {
-	createContext,
-	useState,
-	useContext,
-	useReducer,
-	useMemo,
-} from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { createContext, useContext, useReducer, useMemo } from 'react';
 
 const ModalContext = createContext();
 

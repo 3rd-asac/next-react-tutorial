@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useModalContext } from '@/app/contexts/modal';
 import ModalComponent from '@/app/components/modal';
