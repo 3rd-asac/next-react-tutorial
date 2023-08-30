@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useModalContext } from '@/app/contexts/modal';
 import ModalComponent from '@/app/components/modal';
-import { isValid } from '@/app/(signup)/signup/page';
+import isValid from '@/app/utils/isvalid';
 
 export default function Login() {
 	const {
