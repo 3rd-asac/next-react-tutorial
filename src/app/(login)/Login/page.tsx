@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { useModalContext } from '@/app/contexts/modal';
+import { useModalDispatchContext } from '@/app/contexts/modal';
 import ModalComponent from '@/app/components/modal';
 import isValid from '@/app/utils/isvalid';
 
@@ -12,7 +12,7 @@ export default function Login() {
 		setFocus,
 		formState: { isSubmitted, errors },
 	} = useForm();
-	const [state, dispatch] = useModalContext();
+	const dispatch = useModalDispatchContext();
 	const modalContent = useRef('');
 	let result = useRef({ isError: false, message: '', type: '' });
 	return (

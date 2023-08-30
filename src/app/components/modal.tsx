@@ -3,9 +3,12 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { useModalContext } from '../contexts/modal';
+import {
+	useModalStateContext,
+	useModalDispatchContext,
+} from '../contexts/modal';
 
-interface ModalContent {
+interface ModalType {
 	modalTitle: string;
 	modalContent: string;
 	children?: React.ReactNode;
@@ -27,8 +30,9 @@ export default function ModalComponent({
 	modalTitle,
 	modalContent,
 	children,
-}: ModalContent) {
-	const [state, dispatch] = useModalContext();
+}: ModalType) {
+	const state = useModalStateContext();
+	const dispatch = useModalDispatchContext();
 
 	return (
 		<div>

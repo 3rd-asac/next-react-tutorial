@@ -1,13 +1,34 @@
 'use client';
-import { createContext, useContext, useReducer, useMemo } from 'react';
+import { createContext, useContext, useReducer, Dispatch } from 'react';
 
-const ModalContext = createContext();
+interface State {
+	value: boolean;
+}
 
-export const useModalContext = () => {
-	return useContext(ModalContext);
+interface Action {
+	type: string;
+}
+
+type DispatchType = Dispatch<Action>;
+
+const ModalStateContext = createContext<State | null>(null);
+const ModalDispatchContext = createContext<DispatchType | null>(null);
+
+// State Custom Hook
+export const useModalStateContext = () => {
+	const state = useContext(ModalStateContext);
+	if (!state) throw new Error('Cannot find useModalStateContext');
+	return state;
 };
 
-const reducer = (state, action) => {
+// Dispatch Custom Hook
+export const useModalDispatchContext = () => {
+	const Dispatch = useContext(ModalDispatchContext);
+	if (!Dispatch) throw new Error('Cannot find useModalDispatchContext');
+	return Dispatch;
+};
+
+const reducer = (state: State, action: Action) => {
 	switch (action.type) {
 		case 'open':
 			return { value: !state.value };
@@ -23,14 +44,12 @@ const ModelProvider = ({ children }: { children: React.ReactNode }) => {
 		value: false,
 	});
 
-	const contextValue = useMemo(() => {
-		return [state, dispatch];
-	}, [state, dispatch]);
-
 	return (
-		<ModalContext.Provider value={contextValue}>
-			{children}
-		</ModalContext.Provider>
+		<ModalStateContext.Provider value={state}>
+			<ModalDispatchContext.Provider value={dispatch}>
+				{children}
+			</ModalDispatchContext.Provider>
+		</ModalStateContext.Provider>
 	);
 };
 
