@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
+import Container from './container';
 export const metadata: Metadata = {
-	title: '회원가입',
-	description: '회원가입 페이지',
+	title: '회원가입 및 로그인',
+	description: '회원가입 및 로그인 페이지',
 };
 
 export default function SignupLayout({
@@ -15,7 +15,9 @@ export default function SignupLayout({
 		<html
 			lang='en'
 			id='signup'>
-			<body>{children}</body>
+			<body>
+				<Container>{children}</Container>
+			</body>
 		</html>
 	);
 }
