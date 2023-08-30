@@ -1,7 +1,7 @@
 'use client';
 import { useRef, useState, useEffect } from 'react';
 
-const isValid = (type: string, data: string) => {
+export const isValid = (type: string, data: string) => {
 	const passwordRegex =
 		/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%#*?&^~]).{8,}$/;
 	const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -11,6 +11,7 @@ const isValid = (type: string, data: string) => {
 			isError: true,
 			message:
 				'8자 이상 + 특수문자 1개 이상 + 영문 소문자 최소 1개 + 영문 대문자 최소 1개',
+			type: type,
 		};
 	}
 
@@ -18,10 +19,28 @@ const isValid = (type: string, data: string) => {
 		return {
 			isError: true,
 			message: '이메일 형식이 맞지 않습니다. (example@example.com)',
+			type: type,
 		};
 	}
 
-	return { isError: false, message: '' };
+	if (type === 'login') {
+		const { id, password } = JSON.parse(data);
+		if (id !== 'helloworld')
+			return {
+				isError: true,
+				message: '아이디가 일치하지 않습니다.',
+				type: 'id',
+			};
+		if (password !== 'Qwer!234')
+			return {
+				isError: true,
+				message: '비밀번호가 일치하지 않습니다.',
+				type: 'password',
+			};
+		return { isError: false, message: '로그인 되었습니다!', type: '' };
+	}
+
+	return { isError: false, message: '', type: '' };
 };
 
 export default function Signup() {
@@ -33,7 +52,7 @@ export default function Signup() {
 	// const passwordRef = useRef<HTMLInputElement>(null);
 	// const emailRef = useRef<HTMLInputElement>(null);
 
-	const [error, setError] = useState({ isError: false, message: '' });
+	const [error, setError] = useState({ isError: false, message: '', type: '' });
 
 	const onChangeId = (e: React.ChangeEvent) => {
 		const target = e.target as HTMLInputElement;
