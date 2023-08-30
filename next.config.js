@@ -10,7 +10,7 @@ module.exports = {
         loader: "default",
     },
     // },
-    // webpack(config) {
+    // webpack(config) { // svg 최적화를
     //     // svg 파일을 react 컴포넌트로 만들어준다.
     //     config.module.rules.push({
     //         test: /\.svg$/,
@@ -19,6 +19,9 @@ module.exports = {
     //     });
     //     return config;
     // },
+};
+module.exports = {
+    reactStrictMode: false,
 };
 
 // https://thx.sfo2.cdn.digitaloceanspaces.com/wr/coverimages/i_11/%E3%85%87%E3%84%B9%E3%84%B4_11.jpg
