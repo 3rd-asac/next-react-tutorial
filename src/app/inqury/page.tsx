@@ -1,5 +1,5 @@
 "use client";
-
+// 1:1 문의
 import styles from "./inqury.module.css";
 import React, { useState } from "react";
 import MyInqury from "./components/myInqury";
