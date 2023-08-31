@@ -12,21 +12,28 @@ const StyledButton = styled.button`
         height:48px;
     `;
     
-interface JoinProps {
+interface JoinAndLoginProps {
     onJoinClick : () => void;
+    onLoginClick : () => void;
 }
 
-function Buttons(props : JoinProps) {
+function Buttons(props : JoinAndLoginProps) {
 
 
     return (
         <section className="bg-[#ffffff] ">
             <div className="flex w-1/2 m-auto">
+                <div className="pt-10 text-center flex-1">
+                    <StyledButton type="button" 
+                                onClick={() => props.onLoginClick()} >
+                        로그인
+                    </StyledButton> 
+                </div>
                 
                 <div className="pt-10 text-center flex-1">
                     <StyledButton type="button" 
                                 onClick={() => props.onJoinClick()} >
-                        회원가입하기
+                        회원가입
                     </StyledButton> 
                 </div>
             </div>

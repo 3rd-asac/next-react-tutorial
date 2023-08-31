@@ -1,7 +1,8 @@
 import Button from '@mui/material/Button';
 import {useContext, useEffect, useState} from 'react';
 import ReactModal from 'react-modal';
-import { ModalsStateContext } from './modalContext';
+import { ModalContent } from './modalProvider';
+
 
 const customStyles = {
     content: {
@@ -15,25 +16,24 @@ const customStyles = {
     },
   };
 
+interface JoinContent extends ModalContent{
+    retry : () => void;
+}
 
-
-function JoinModal(){
-
-    const {text, isOpen, retry} = useContext(ModalsStateContext);
-    console.log(text);
+function JoinModal(props : JoinContent){
     const handleSuccess = () => {
-        retry();
+        console.log("클릭!!");
+        props.retry();
     }
-
     return(
-        <ReactModal isOpen={isOpen} style={customStyles}>
+        <ReactModal isOpen={props.isOpen ?? false} style={customStyles}>
             <div>
                 <section className='m-auto'>
                     <div className='text-center f'>
                         <h1>입력에 문제가 있습니다.</h1>
                     </div>
                     <div className='text-center'>
-                        {text}
+                        {props.text}
                     </div>
                 </section>
                 

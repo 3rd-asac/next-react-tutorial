@@ -5,57 +5,41 @@ import Welcome from "./component/welcome";
 import JoinForm from "./component/joinForm";
 import styles from "./page.module.css";
 import Buttons from "./component/buttons";
-import JoinModal from "./component/modal/joinModal";
-import {ModalsStateContext, defaultValue, ModalProps } from "./component/modal/modalContext";
 import ReactModal from "react-modal";
+import LoginForm from "./component/loginForm";
+import ModalProvider, { ModalContext } from "./component/modal/modalProvider";
 
 
 function JoinPage (){
     const idRef = useRef<HTMLInputElement | null>(null);
     const passwordRef = useRef<HTMLInputElement | null>(null);
-    const [isOpen, setOpen] = useState(false);
+    const [isJoin, setIsJoin] = useState(false);
 
     useEffect(() => {
         ReactModal.setAppElement('#rootLogin'); // 최상위 엘리먼트의 id를 설정
       }, []); // 컴포넌트가 마운트될 때 한 번만 실행
 
-    
+    // 전역으로 공유하는 프롭스 리스트
+    const {show , hide} = useContext(ModalContext);
 
-    const handleRetry=()=>{
-        //setOpen(false);
-        console.log("context 삭제");
-        setOpenModel(defaultValue);
-    }
 
-    // 전역으로 공유하는 컴포넌트,프롭스 리스트
-    const [openModal , setOpenModel] = useState<ModalProps>(defaultValue);
-
-    // 열고 싶은 모달 컴포넌트와 컴포넌트에 넘겨줄 props를 입력
-    const open = (props:ModalProps) => { 
-        console.log("provider open");
-        console.log(props);
-        setOpenModel(props)
-    };
-
-    const handleClick = (text: String) => {
+    const handleClick = (text: string) => {
         //setOpen(true);
-        open({ text: text ,isOpen:true ,retry:handleRetry} );
+        show({ text: text ,isOpen:true} );
     };
 
-    const handleItemClick= () => {
+    const handleItemCheck= () => {
         if(idRef.current!==null && passwordRef.current!==null){
             if(idRef.current.value ===""){
-                console.log("이메일 빈칸!!!");
                 idRef.current.focus();
-                handleClick("이메일을 작성해주세요.");
-                
-                return ;
+                handleClick("이메일을 작성해주세요.")
+                return false;
             }
             else if(passwordRef.current.value ===""){
                 console.log("비밀번호 빈칸!!!");
                 passwordRef.current.focus();
                 handleClick("비밀번호를 작성해주세요.");
-                return ;
+                return false;
             }
             
             if(idRef.current.value !=="") {
@@ -64,7 +48,7 @@ function JoinPage (){
                     idRef.current.focus();
                     idRef.current.value="";
                     handleClick('이메일을 형식을 맞춰주세요.');
-                    return ;
+                    return false;
                 }
             }
             if(passwordRef.current.value !==""){
@@ -73,32 +57,56 @@ function JoinPage (){
                     passwordRef.current.focus();
                     passwordRef.current.value="";
                     handleClick('비밀번호 형식을 맞춰주세요.');
+                    return false
                 }
                 else{
                     console.log(idRef.current.value);
                     console.log(passwordRef.current.value);
+                    return true;
                 }
-                
             }
-            
         }  
     }
 
+    const handelJoin= () => {
+        if(isJoin){
+            const check = handleItemCheck();
+            if(!check) return ;
+            setIsJoin(false);
+        }
+        else{
+            setIsJoin(true);
+        }
+    }
+
+    const handelLogin = () => {
+        if(!isJoin){
+            const check = handleItemCheck();
+            if(!check) return ;
+        }
+        else{
+            setIsJoin(false)
+        }
+        
+    }
+
     // <JoinModal isOpen={isOpen} text="이메일을 작성해주세요" retry={handleRetry}/>
+    //<ModalsStateContext.Provider value={openModal}>
 
     return (
-        <ModalsStateContext.Provider value={openModal}>
             <div className="w-full h-screen bg-[#ffffff] pt-20" id="rootLogin">
                 <div className={styles.align_rt}>
                     <div className={styles.inqury}>
                         <Welcome/>
-                        <JoinForm idRef={idRef} passwordRef={passwordRef} />
-                        <Buttons onJoinClick={handleItemClick}/>
+                        <form >
+                            {isJoin ? <JoinForm idRef={idRef} passwordRef={passwordRef} /> 
+                                    : <LoginForm idRef={idRef} passwordRef={passwordRef} />}
+                            <Buttons onJoinClick={handelJoin} onLoginClick={handelLogin}/>
+                        </form>
+                        
                     </div>
                 </div>
-                <JoinModal/>
             </div>
-        </ModalsStateContext.Provider>
     )
 }
 
