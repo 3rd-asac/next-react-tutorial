@@ -1,8 +1,10 @@
+'use client';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from './components/header';
 import ModelProvider from './contexts/modal';
+import { usePathname } from 'next/navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -15,10 +17,13 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const pathname = usePathname();
+	const isHeader = pathname.includes('/signup') || pathname.includes('/Login');
+	console.log(pathname);
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<Header />
+				{isHeader ? <></> : <Header />}
 				<ModelProvider>{children}</ModelProvider>
 			</body>
 		</html>
