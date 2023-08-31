@@ -68,7 +68,7 @@ function JoinPage (){
                 }
             }
             if(passwordRef.current.value !==""){
-                const pwdForm =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                const pwdForm =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#$(^)])[A-Za-z\d@$!%*?&#$(^)]{8,}$/;
                 if(!pwdForm.test(passwordRef.current.value)){
                     passwordRef.current.focus();
                     passwordRef.current.value="";
