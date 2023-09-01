@@ -1,6 +1,6 @@
 "use client"
 
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useReducer, useRef, useState } from "react";
 import Welcome from "./component/welcome";
 import JoinForm from "./component/joinForm";
 import styles from "./page.module.css";
@@ -9,6 +9,12 @@ import ReactModal from "react-modal";
 import LoginForm from "./component/loginForm";
 import ModalProvider, { ModalContext } from "./component/modal/modalProvider";
 
+// function reducer(state, action){
+//     switch(action.type){
+//         case "OpenModal":
+//             return 
+//     }
+// }
 
 function JoinPage (){
     const idRef = useRef<HTMLInputElement | null>(null);
@@ -21,6 +27,9 @@ function JoinPage (){
 
     // 전역으로 공유하는 프롭스 리스트
     const {show , hide} = useContext(ModalContext);
+
+    const initialState = {eamilText : "", passwordText:""};
+    //const [state, dispatch] = useReducer(reducer, initialState);
 
 
     const handleClick = (text: string) => {

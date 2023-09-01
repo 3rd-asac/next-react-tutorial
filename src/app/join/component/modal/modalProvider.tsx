@@ -27,7 +27,6 @@ export default function ModalProvider ({children}:ModalProviderProps) {
 
     const [modalValue, setModalValue] = useState<ModalContent>(initialValue);
                              
-
     return (
         <ModalContext.Provider value={
             {show:(parm : ModalContent)=>{

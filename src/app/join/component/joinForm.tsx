@@ -5,8 +5,11 @@ interface LoginProps {
     passwordRef: React.RefObject<HTMLInputElement>;
 }
 
+
+
 function JoinForm(props : LoginProps) {
     const {idRef, passwordRef} = props;
+    
     return (
         <section className={styles.info_wrap}>
             <p className="text-2xl mb-10 text-center">회원가입</p>

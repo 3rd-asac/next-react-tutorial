@@ -6,21 +6,24 @@ module.exports = {
     },
     extends: [
         // 필수
-        "airbnb", // 지양하자
+        //"airbnb", // 지양하자
+        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "next/core-web-vitals"
     ],
-    overrides: [
-        // 꼭 필요없을 것이다
-        {
-            env: {
-                node: true,
-            },
-            files: [".eslintrc.{js,cjs}"],
-            parserOptions: {
-                sourceType: "script",
-            },
-        },
-    ],
+    // overrides: [
+    //     // 꼭 필요없을 것이다
+    //     {
+    //         env: {
+    //             node: true,
+    //         },
+    //         files: [".eslintrc.{js,cjs}"],
+    //         parserOptions: {
+    //             sourceType: "script",
+    //         },
+    //     },
+    // ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
@@ -33,7 +36,7 @@ module.exports = {
         // 필수
         "@typescript-eslint",
         "react",
-        "prettier", // extends로 가는게 좋다
+        //"prettier", // extends로 가는게 좋다
     ],
     rules: {
         // 필수
@@ -52,6 +55,6 @@ module.exports = {
             1,
             { extensions: [".js", ".jsx", ".tsx"] }, //jsx사용가능한 확장자 설정
         ],
-        "prettier/prettier": "error", // 필요 없어보인다.
+        //"prettier/prettier": "error", // 필요 없어보인다.
     },
 };
