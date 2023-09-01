@@ -16,23 +16,23 @@ const AsideComponent = () => {
           </button>
         </li>
         <li>
-          <Link href="/Join">
-            <div
-              className="signUpButton mt-1 text-xs"
+          <div
+            className="signUpButton mt-1 text-xs flex"
+            data-attribute-id="gnb"
+            data-gnb-kind="signupLogin"
+          >
+            <Link href="/Join">회원가입</Link>
+            <a
+              className="mdMoreVisible leftDivision"
               data-attribute-id="gnb"
-              data-gnb-kind="signupLogin"
+              data-gnb-kind="forEmployers"
             >
-              회원가입/로그인
-            </div>
-          </Link>
+              |
+            </a>
+            <Link href="Login">로그인</Link>
+          </div>
         </li>
-        <li
-          className="mdMoreVisible leftDivision"
-          data-attribute-id="gnb"
-          data-gnb-kind="forEmployers"
-        >
-          |
-        </li>
+
         <div className="relative">
           <div className="absolute flex items-center justify-center rounded-full bg-gray-200 bg-opacity-50 w-20 h-6">
             <div className="dashboardButton text-xs m-1 mt-1.5">

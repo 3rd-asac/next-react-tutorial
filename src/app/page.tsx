@@ -1,3 +1,4 @@
+'use client';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
@@ -92,7 +93,6 @@ const Page: React.FC = () => {
           <WantedSVG className="ml-2 w-10 h-10" />{' '}
           {/* Adjust ml value as needed */}
         </div>
-
         <br></br>
         {/* 푸터의 하단 구분선 */}
         <div className="w-[100%] mt-[0.3%] mb-[2%] border-[0.5px] border-lightGray/30"></div>
