@@ -12,6 +12,6 @@ export interface ActionType extends StateType {
 }
 
 export const ModalContext = createContext(initialModal)
-export const ModalDispatchContext = createContext({
-  dispatch: (action: ActionType) => {},
-})
+export const ModalDispatchContext = createContext<(action: ActionType) => void>(
+  () => {},
+)

@@ -1,5 +1,6 @@
+'use client'
 import styles from './module/inputForm.module.css'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
 
 interface LoginProps {
   idRef: React.RefObject<HTMLInputElement>
@@ -7,8 +8,22 @@ interface LoginProps {
 }
 
 interface IFormInput {
-  eamil: string
+  email: string
   password: string
+}
+
+const resolver: Resolver<IFormInput> = async (values) => {
+  return {
+    values: values.email ? values : {},
+    errors: !values.email
+      ? {
+          email: {
+            type: 'required',
+            message: 'This is required.',
+          },
+        }
+      : {},
+  }
 }
 
 function LoginForm(props: LoginProps) {
@@ -17,13 +32,13 @@ function LoginForm(props: LoginProps) {
   return (
     <section className={styles.info_wrap}>
       <p className="text-2xl mb-10 text-center">로그인</p>
-
       <div className={styles.phone_block}>
         <b>이메일</b>
         <p className={styles.inp_wrap}>
           <input
-            id="eamil_text"
+            id="eamil"
             className={styles.id_input}
+            required={true}
             ref={idRef}
             minLength={10}
             type="email"
@@ -35,10 +50,10 @@ function LoginForm(props: LoginProps) {
         <b>비밀번호</b>
         <p className={styles.inp_wrap}>
           <input
-            id="password_text"
+            id="password"
             className={styles.pwd_input}
-            ref={passwordRef}
             type="text"
+            ref={passwordRef}
             placeholder="8자 이상 + 특수문자 1개 이상 + 영문 소문자 최소 1개 + 영문 대문자 최소 1개"
           />
         </p>

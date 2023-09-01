@@ -36,7 +36,7 @@ export default function ReduceContextProvider({
 
   return (
     <ModalContext.Provider value={modal}>
-      <ModalDispatchContext.Provider value={{ dispatch: dispatch }}>
+      <ModalDispatchContext.Provider value={dispatch}>
         {children}
         <Modal
           buttonAction={() => {

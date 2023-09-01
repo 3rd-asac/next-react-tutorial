@@ -8,21 +8,23 @@ interface openModalParam {
 interface ItemCheckProps {
   id: React.RefObject<HTMLInputElement | null>
   pwd: React.RefObject<HTMLInputElement | null>
+  handleOpen: (text: string) => void
 }
 
 export const handleItemCheck = (props: ItemCheckProps) => {
-  const { id, pwd } = props
-  const { dispatch } = useContext(ModalDispatchContext)
+  const { id, pwd, handleOpen } = props
 
   if (id.current !== null && pwd.current !== null) {
     if (id.current.value === '') {
       id.current.focus()
       // 모달창이 열리도록하는 dispatch를 수행할 수 있을듯?
-      dispatch({ type: 'open', text: '이메일을 작성해주세요.', isOpen: true })
+      // dispatch({ type: 'open', text: '이메일을 작성해주세요.', isOpen: true })
+      handleOpen('이메일을 작성해주세요.')
       return false
     } else if (pwd.current.value === '') {
       pwd.current.focus()
-      dispatch({ type: 'open', text: '비밀번호를 작성해주세요.', isOpen: true })
+      //dispatch({ type: 'open', text: '비밀번호를 작성해주세요.', isOpen: true })
+      handleOpen('비밀번호를 작성해주세요.')
       return false
     }
     if (id.current.value !== '') {
@@ -30,11 +32,7 @@ export const handleItemCheck = (props: ItemCheckProps) => {
       if (!emailForm.test(id.current.value)) {
         id.current.focus()
         id.current.value = ''
-        dispatch({
-          type: 'open',
-          text: '이메일을 형식을 맞춰주세요',
-          isOpen: true,
-        })
+        handleOpen('이메일을 형식을 맞춰주세요')
         return false
       }
     }
@@ -44,11 +42,7 @@ export const handleItemCheck = (props: ItemCheckProps) => {
       if (!pwdForm.test(pwd.current.value)) {
         pwd.current.focus()
         pwd.current.value = ''
-        dispatch({
-          type: 'open',
-          text: '비밀번호 형식을 맞춰주세요',
-          isOpen: true,
-        })
+        handleOpen('비밀번호 형식을 맞춰주세요')
         return false
       } else {
         console.log(id.current.value)

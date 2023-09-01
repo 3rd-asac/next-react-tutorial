@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@hookform/resolvers": "^3.3.1",
         "@types/react-modal": "^3.16.0",
         "next": "^13.4.19",
         "react": "^18.2.0",
@@ -16,7 +17,8 @@
         "react-hook-form": "^7.45.4",
         "react-modal": "^3.16.1",
         "styled-components": "^6.0.7",
-        "typescript": "5.1.6"
+        "typescript": "5.1.6",
+        "yup": "^1.2.0"
     },
     "devDependencies": {
         "@emotion/react": "^11.11.1",

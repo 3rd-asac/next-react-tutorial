@@ -9,7 +9,7 @@ import Buttons from '@auth/components/buttons'
 import LoginForm from '@auth/components/loginForm'
 import { handleItemCheck } from '@auth/utils/handleItemCheck'
 import { Poltawski_Nowy } from 'next/font/google'
-import { ModalDispatchContext } from '../context/context'
+import { ActionType, ModalDispatchContext } from '../context/context'
 
 function LoginPage() {
   const router = useRouter()
@@ -23,10 +23,20 @@ function LoginPage() {
     router.push('/auth/join')
   }
 
-  const modalOpen = () => {}
+  function handleOpen(text: string) {
+    dispatch({
+      type: 'open',
+      text: text,
+      isOpen: true,
+    })
+  }
 
   const handelLogin = () => {
-    const check = handleItemCheck({ id: idRef, pwd: passwordRef })
+    const check = handleItemCheck({
+      id: idRef,
+      pwd: passwordRef,
+      handleOpen: handleOpen,
+    })
     if (check) {
       console.log('환영합니다! 로그인 성공!')
     } else {

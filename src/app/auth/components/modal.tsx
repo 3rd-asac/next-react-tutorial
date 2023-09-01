@@ -13,6 +13,7 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     width: '50%',
   },
+  overlay: { zIndex: 1000 },
 }
 
 interface ModalPropsType {
