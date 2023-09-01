@@ -7,10 +7,9 @@ module.exports = {
     extends: [
         // 필수
         //"airbnb", // 지양하자
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "prettier/@typescript-eslint",
-        "next/core-web-vitals"
+        "eslint:recommended",
+        "plugin:prettier/recommended",  // Prettier를 ESLint의 플러그인으로써 동작시킴
+        //"prettier/@typescript-eslint", 
     ],
     // overrides: [
     //     // 꼭 필요없을 것이다
@@ -36,6 +35,7 @@ module.exports = {
         // 필수
         "@typescript-eslint",
         "react",
+        "react-hooks", // 리액트 hoots 규칙들 적용
         //"prettier", // extends로 가는게 좋다
     ],
     rules: {
@@ -55,6 +55,6 @@ module.exports = {
             1,
             { extensions: [".js", ".jsx", ".tsx"] }, //jsx사용가능한 확장자 설정
         ],
-        //"prettier/prettier": "error", // 필요 없어보인다.
+        //"prettier/prettier": "error", // prettier의 포메팅 이슈를 ESLint의 에러 리포팅으로 출력하기 위함 없으면 prettier가 동작하지 않음
     },
 };

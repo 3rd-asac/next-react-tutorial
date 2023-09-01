@@ -1,13 +1,16 @@
 'use client'
 
-import ModalProvider from "./join/component/modal/modalProvider"
+import ReduceContextProvider from './auth/context/modalContextProvier'
+import ModalProvider from './jointemp/component/modal/modalProvider'
 
 interface Props {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 export default function Providers({ children }: Props) {
-    return (<ModalProvider>
-            {children}
-        </ModalProvider>);
+  return (
+    <ModalProvider>
+      <ReduceContextProvider>{children}</ReduceContextProvider>
+    </ModalProvider>
+  )
 }
