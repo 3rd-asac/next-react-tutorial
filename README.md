@@ -1,16 +1,34 @@
-![image](https://github.com/3rd-asac/next-react-tutorial/assets/96914905/a3e4d3db-ef53-41fa-a982-09758272887a)
-./
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![image](https://github.com/3rd-asac/next-react-tutorial/assets/96914905/739420a2-d15b-4a54-bce0-20a983880b56)
-./asd
+## Getting Started
 
-# [과정 및 결과](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3)
-1. [Create Next App (Typescript) 생성](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=1f5749c07d6a4d2eb972ce9adeebc683&pm=s)
-2. [tsconfig.json](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=0b9b3d159daf422495471e6b94e67565&pm=s)
-3. [.eslintrc.json](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=7d1fbc7e8251420c9baae4cd8dafb6e8&pm=s)
-4. [prettier.config.cjs](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=a28281e7bc3646928421ebad2bea32fa&pm=s)
-5. [SWC (Speedy Web Compiler)](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=5931bf0e5cb04acea80a0d90734d0e6e&pm=s)
-6. [*.svg Component 생성](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=5595decb35de41f39818a2a9fd69b3de&pm=s)
-7. [tailwind.config.ts](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=59d3c22e3b9e470f943b754cb704842f&pm=s)
-8. [Wanted Top-banner Clone Coding](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=7d7622c11181483b8544f30a1b4f2ed2&pm=s)
-9. [과제 제출](https://www.notion.so/softsquared/5-f7ed2b8618e1416cbfe59efc2e7a9ec3?p=2f30be15e5694fca9853c5ff75fe0464&pm=s)
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

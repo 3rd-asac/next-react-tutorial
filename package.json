@@ -1,34 +1,32 @@
 {
-  "name": "my-next-app2",
-  "version": "0.2.0",
-  "prettier": "./prettier.config.cjs",
+  "name": "week6",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "^3.3.3"
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.6",
-    "@mui/material": "^5.14.6",
-    "@types/node": "20.5.4",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
-    "postcss": "8.4.28",
-    "prettier": "^3.0.2",
-    "styled-components": "^6.0.7",
-    "typescript": "5.1.6"
+    "@mui/icons-material": "^5.14.7",
+    "@mui/material": "^5.14.7",
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "^13.4.19",
+    "postcss": "^8.4.28",
+    "react-hook-form": "^7.45.4",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
