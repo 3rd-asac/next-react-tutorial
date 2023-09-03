@@ -1,12 +1,19 @@
 'use client';
 import { createContext, useContext, useReducer, Dispatch } from 'react';
 
+interface Callback {
+	confirmCallback: () => void;
+	cancelCallback: () => void;
+}
+
 interface State {
 	value: boolean;
+	callback?: Callback;
 }
 
 interface Action {
 	type: string;
+	payload?: Callback;
 }
 
 type DispatchType = Dispatch<Action>;

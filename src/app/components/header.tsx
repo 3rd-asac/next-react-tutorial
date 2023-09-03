@@ -14,7 +14,7 @@ export const Header_list = () => {
 		<ul className='flex'>
 			{list.map((el, key) => (
 				<li
-					className='p-4'
+					className='p-4 font-bold text-sm'
 					key={key}>
 					{el.data}
 				</li>
@@ -25,32 +25,36 @@ export const Header_list = () => {
 
 export default function Header() {
 	return (
-		<header className='border-b-2 border-black'>
+		<header className='border-b-2 border-gray-200'>
 			<nav className='max-w-wanted flex justify-between items-center m-auto'>
 				<div>
 					<div>
 						<MenuIcon className='mr-4' />
 						<a
 							href='#'
-							className='font-bold'>
+							className='font-extrabold text-2xl'>
 							wanted
 						</a>
 					</div>
 				</div>
 				<Header_list />
 				<aside>
-					<ul className='flex'>
+					<ul className='flex items-center'>
 						<li className='mx-1'>
 							<button>
 								<SearchIcon />
 							</button>
 						</li>
-						<li className='mx-1'>
+						<li className='mx-4 text-sm font-bold'>
 							<button>회원가입/로그인</button>
 						</li>
-						<li className='mx-1'>|</li>
-						<li className='mx-1'>
-							<a href='#'>기업 서비스</a>
+						<li className='mx-4 text-xs text-gray-300'>|</li>
+						<li className='mx-4'>
+							<a
+								href='#'
+								className='border-2 rounded-3xl border-gray-200 p-2 text-xs font-bold text-gray-400'>
+								기업 서비스
+							</a>
 						</li>
 					</ul>
 				</aside>

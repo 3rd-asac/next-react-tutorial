@@ -1,9 +1,15 @@
+import Link from 'next/link';
+
 export default function Container({ children }: { children: React.ReactNode }) {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-6'>
 			<div className='border-2 border-gray-200 rounded-md bg-white p-5 w-[400px]'>
 				<div className='flex flex-col items-center'>
-					<h1 className='font-bold font- text-3xl pt-10 mb-4'>wanted</h1>
+					<Link
+						href={'/'}
+						className='font-bold font- text-3xl pt-10 mb-4'>
+						wanted
+					</Link>
 					<h2 className='text-center font-semibold text-2xl my-4'>
 						하나의 계정으로
 						<br />

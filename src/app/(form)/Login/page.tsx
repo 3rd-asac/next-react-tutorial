@@ -120,7 +120,9 @@ export default function Login() {
 				<p>{error.current.isError}</p>
 				<ModalComponent
 					modalTitle='로그인'
-					modalContent={modalContent.current}></ModalComponent>
+					modalContent={modalContent.current}>
+						<button></button>
+					</ModalComponent>
 			</form>
 		</div>
 	);

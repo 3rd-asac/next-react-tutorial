@@ -72,7 +72,8 @@ export default function Signup() {
 	const dispatch = useModalDispatchContext();
 	const onChangeId = (e: React.ChangeEvent) => {
 		const target = e.target as HTMLInputElement;
-		setId(target.value);
+		setId(() => target.value);
+		console.log('state :', id, 'input : ', target.value);
 	};
 
 	const onChangePassword = (e: React.ChangeEvent) => {
