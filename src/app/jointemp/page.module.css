@@ -1,0 +1,13 @@
+.align_rt {
+    /* width: 724px; */
+    width: 100%;
+    margin-right: 31px;
+    display: block;
+}
+
+.inqury {
+    background-color: #e8e8e8;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}

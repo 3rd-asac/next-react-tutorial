@@ -1,0 +1,53 @@
+.tab_each {
+    border-top: none;
+}
+
+.tab_each section {
+    background-color: #fff;
+    display: block;
+}
+
+.alert_top {
+    padding: 43px 0 0 0;
+    background: #fff;
+}
+
+.tab_each b {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+@media (min-width: 300px) {
+    .tab_each .alert_top p {
+        border-radius: 0;
+        background: #fff;
+        padding: 0 0;
+        font-size: 16px;
+        line-height: normal;
+        color: rgba(0, 0, 0, 0.56);
+        text-align: left;
+    }
+}
+
+.btn_wrap {
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+
+.btn_red_fill {
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: top;
+    background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
+}
+@media (min-width: 300px) {
+    .btn_red_fill {
+        width: 144px;
+        height: 48px;
+    }
+}
