@@ -10,6 +10,10 @@ import {
 import { useModalDispatchContext } from '@/app/contexts/modal';
 import ModalComponent from '@/app/components/modal';
 import isValid from '@/app/utils/isvalid';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/redux/store';
+import { logIn, logOut } from '@/redux/slice/auth-slice';
+import { useRouter } from 'next/navigation';
 
 interface ErrorState {
 	isError: boolean;
@@ -74,7 +78,9 @@ export default function Login() {
 		formState: { errors },
 	} = useForm();
 	const dispatch = useModalDispatchContext();
+	const reduxDispatch = useDispatch<AppDispatch>();
 	const modalContent = useRef('');
+	const router = useRouter();
 	let error = useRef({ isError: false, message: '', type: '' });
 
 	const inputDatas: InputData[] = [
@@ -109,9 +115,15 @@ export default function Login() {
 			<form
 				onSubmit={handleSubmit((data) => {
 					error.current = isValid('login', JSON.stringify(data));
-					modalContent.current = error.current.message;
-					setFocus(error.current.type);
-					dispatch({ type: 'open' });
+					if (error.current.isError) {
+						modalContent.current = error.current.message;
+						setFocus(error.current.type);
+						dispatch({ type: 'open' });
+					} else {
+						reduxDispatch(logIn(data.id));
+						router.push('/');
+					}
+					console.log(data, error.current);
 				})}>
 				<TextField inputDatas={inputDatas} />
 				<button className='bg-blue-500 rounded-3xl text-white font-bold w-full py-2 mt-8 mb-2'>
@@ -121,8 +133,8 @@ export default function Login() {
 				<ModalComponent
 					modalTitle='로그인'
 					modalContent={modalContent.current}>
-						<button></button>
-					</ModalComponent>
+					<button></button>
+				</ModalComponent>
 			</form>
 		</div>
 	);

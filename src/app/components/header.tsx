@@ -1,5 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { RootState } from '@/redux/store';
+import { useSelector } from 'react-redux';
 
 export const Header_list = () => {
 	const list = [
@@ -24,6 +26,9 @@ export const Header_list = () => {
 };
 
 export default function Header() {
+	const { isAuth, userName, uid } = useSelector(
+		(state: RootState) => state.authReducer.value,
+	);
 	return (
 		<header className='border-b-2 border-gray-200'>
 			<nav className='max-w-wanted flex justify-between items-center m-auto'>
@@ -46,7 +51,7 @@ export default function Header() {
 							</button>
 						</li>
 						<li className='mx-4 text-sm font-bold'>
-							<button>회원가입/로그인</button>
+							{isAuth ? <p>{userName}님</p> : <button>회원가입/로그인</button>}
 						</li>
 						<li className='mx-4 text-xs text-gray-300'>|</li>
 						<li className='mx-4'>
