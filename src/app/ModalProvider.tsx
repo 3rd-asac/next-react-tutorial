@@ -23,7 +23,7 @@ const modalReducer = (state, action) => {
     }
 };
 
-const ModalContext = createContext();
+export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
     const [modalState, dispatch] = useReducer(modalReducer, initialState);
@@ -38,7 +38,7 @@ export const ModalProvider = ({ children }) => {
 export const useModal = () => {
     const context = useContext(ModalContext);
     if (!context) {
-        throw new Error('useModal must be used within a ModalProvider');
+        throw new Error('에러발생');
     }
     return context;
 };
