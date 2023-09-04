@@ -6,7 +6,7 @@ interface AuthState {
 	uid: string;
 }
 
-interface InitialState {
+export interface InitialState {
 	value: AuthState;
 }
 
