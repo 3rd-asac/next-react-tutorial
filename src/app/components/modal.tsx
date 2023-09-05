@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import {
 	useModalStateContext,
 	useModalDispatchContext,
-} from '../contexts/modal';
+} from '@/app/contexts/modal';
 
 interface ModalType {
 	modalTitle: string;

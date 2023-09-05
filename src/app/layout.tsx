@@ -1,9 +1,9 @@
 'use client';
-import './globals.css';
+import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Header from './components/header';
-import ModelProvider from './contexts/modal';
+import Header from '@/app/components/header';
+import ModelProvider from '@/app/contexts/modal';
 import { usePathname } from 'next/navigation';
 import ReduxProvider from '@/redux/provider';
 const inter = Inter({ subsets: ['latin'] });

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Container from './container';
+import Container from '@/app/(form)/container';
 export const metadata: Metadata = {
 	title: '회원가입 및 로그인',
 	description: '회원가입 및 로그인 페이지',
