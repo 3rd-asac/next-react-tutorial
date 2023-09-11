@@ -1,9 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Link from 'next/link';
-import router from 'next/router';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import Popup from '../Modal/Popup';
+"use client";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
+import router from "next/router";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import Popup from "../Modal/Popup";
 
 const UseRefEx = () => {
   const {
@@ -20,44 +21,21 @@ const UseRefEx = () => {
     cancelCallback?: () => void;
   }>({
     open: false,
-    title: '',
-    message: '',
+    title: "",
+    message: "",
   });
 
-  const handlePopupCallback = () => {
-    console.log('Popup confirmed.');
-  };
-
-  const handlePopupCancelCallback = () => {
-    console.log('Popup canceled.');
-  };
-
-  const openPopup = (
-    title: string,
-    message: string,
-    callback?: () => void,
-    cancelCallback?: () => void
-  ) => {
+  const openPopup = (title: string, message: string, callback?: () => void) => {
     setPopup({
       open: true,
       title: title,
       message: message,
       callback: callback,
-      cancelCallback: cancelCallback,
-    });
-  };
-
-  const closePopup = () => {
-    setPopup({
-      open: false,
-      title: '',
-      message: '',
     });
   };
 
   const validPassword = (id: string, password: string) => {
-    // 여기에서 실제 로그인 정보와 비교하는 로직을 구현해야 합니다.
-    return id === 'helloworld' && password === 'Qwer!234';
+    return id === "helloworld" && password === "Qwer!234";
   };
 
   const onSubmit = (data: any) => {
@@ -66,20 +44,15 @@ const UseRefEx = () => {
     if (!validPassword(id, password)) {
       handleInvalidPassword();
     } else {
-      console.log('로그인 정보:', {
+      console.log("로그인 정보:", {
         id: id,
         password: password,
       });
-      router.push('/');
+      router.push("/");
     }
   };
   const handleInvalidPassword = () => {
-    openPopup(
-      '로그인 제약',
-      'ID 또는 비밀번호가 틀렸습니다.',
-      undefined,
-      closePopup
-    );
+    openPopup("로그인 제약", "ID 또는 비밀번호가 틀렸습니다.", undefined);
   };
   return (
     <div className="container mx-auto p-4">
@@ -87,9 +60,8 @@ const UseRefEx = () => {
         <div className="mb-4">
           <input
             type="text"
-            name="id"
             placeholder="아이디"
-            {...register('id', { required: true })}
+            {...register("id", { required: true })}
             className="form-control"
           />
           {errors.id && (
@@ -99,20 +71,21 @@ const UseRefEx = () => {
         <div className="mb-4">
           <input
             type="password"
-            name="password"
             placeholder="비밀번호"
-            {...register('password', { required: true })}
+            {...register("password", { required: true })}
             className="form-control"
           />
           {errors.password && (
             <span className="text-danger">비밀번호를 입력해주세요.</span>
           )}
         </div>
+
         <button type="submit" className="btn btn-primary">
           로그인
         </button>
       </form>
       <div className="mt-4">
+        <a onClick={() => console.log("123123")}></a>
         <Link href="/">
           <button type="button" className="btn btn-secondary mr-2">
             메인
@@ -128,11 +101,12 @@ const UseRefEx = () => {
       {/* 팝업 컴포넌트 */}
       <Popup
         open={popup.open}
-        setPopup={setPopup}
         title={popup.title}
         message={popup.message}
         callback={popup.callback}
-        cancelCallback={popup.cancelCallback}
+        setPopup={function (): void {
+          throw new Error("Function not implemented.");
+        }}
       />
     </div>
   );

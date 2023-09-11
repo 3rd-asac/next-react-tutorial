@@ -23,14 +23,6 @@ const UseRefEx = () => {
     email: '',
   });
 
-  const handlePopupCallback = () => {
-    console.log('Popup confirmed.');
-  };
-
-  const handlePopupCancelCallback = () => {
-    console.log('Popup canceled.');
-  };
-
   const openPopup = (
     title: string,
     message: string,
@@ -72,14 +64,6 @@ const UseRefEx = () => {
     );
   };
 
-  const handleValidInput = () => {
-    openPopup(
-      '회원 가입',
-      '가입 정보를 확인하시겠습니까?',
-      handlePopupCallback,
-      closePopup
-    );
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs({
@@ -177,12 +161,11 @@ const UseRefEx = () => {
       {/* 팝업 컴포넌트 */}
       <Popup
         open={popup.open}
-        setPopup={setPopup}
         title={popup.title}
         message={popup.message}
-        callback={popup.callback}
-        cancelCallback={popup.cancelCallback}
-      />
+        callback={popup.callback} setPopup={function (): void {
+          throw new Error('Function not implemented.');
+        } }      />
     </div>
   );
 };

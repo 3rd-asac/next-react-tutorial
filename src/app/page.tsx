@@ -1,22 +1,23 @@
-'use client';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import MenuIcon from '@mui/icons-material/Menu';
-import React from 'react';
-import AsideComponent from './AsideComponent';
-import ImageSlider from './ImageSlide';
-import Menu from './menu';
-import PathSVG from '/public/path.svg';
-import SeachSVG from '/public/search.svg';
-import WantedSVG from '/public/wanted.svg';
+"use client";
+
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import MenuIcon from "@mui/icons-material/Menu";
+import React from "react";
+import AsideComponent from "./AsideComponent";
+import ImageSlider from "./ImageSlide";
+import Menu from "./menu";
+import PathSVG from "/public/path.svg";
+import SeachSVG from "/public/search.svg";
+import WantedSVG from "/public/wanted.svg";
 
 const Page: React.FC = () => {
   const images = [
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2078%2Fa78a154c.jpg&w=1060&q=100',
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2070%2F1c7540fe.jpg&w=1060&q=100',
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2081%2F7c4e8e6d.jpg&w=1060&q=100',
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2059%2F24c52879.jpg&w=1060&q=100',
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2132%2Fb670c0d8.jpg&w=1060&q=100',
-    'https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2144%2Fc0d7064f.jpg&w=1060&q=100',
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2078%2Fa78a154c.jpg&w=1060&q=100",
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2070%2F1c7540fe.jpg&w=1060&q=100",
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2081%2F7c4e8e6d.jpg&w=1060&q=100",
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2059%2F24c52879.jpg&w=1060&q=100",
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2132%2Fb670c0d8.jpg&w=1060&q=100",
+    "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fbanners%2F2144%2Fc0d7064f.jpg&w=1060&q=100",
   ];
 
   return (
@@ -90,7 +91,7 @@ const Page: React.FC = () => {
           <div className=" w-[15%] border-lightGray/30">
             <PathSVG />
           </div>
-          <WantedSVG className="ml-2 w-10 h-10" />{' '}
+          <WantedSVG className="ml-2 w-10 h-10" />{" "}
           {/* Adjust ml value as needed */}
         </div>
         <br></br>

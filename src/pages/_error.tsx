@@ -13,7 +13,7 @@ const Error: React.FC<IError> = ({ statuscode }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
+export const getServerSideProps: GetServerSideProps = async ({ res}) => {
   const statusCode = res.statusCode;
 
   return {
