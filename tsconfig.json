@@ -85,7 +85,12 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "src/app/page.jsx"
+        "src/app/page.jsx",
+        "src/app/Signin/page.js",
+        "src/app/Signin/page.jsx",
+        "src/app/page.js",
+        "src/app/hello.js",
+        "src/app/hello.js"
     ],
     /* "files" 와 "include" 모두 지정되어 있지 않다면 컴파일러는 기본적으로 "exclude" 속성을 사용하여 제외된 것은 제외하고 모든 TypeScript (.ts,.d.ts 그리고 .tsx) 파일을 포함하는 디렉토리와 하위 디렉토리에 포함 */
     "exclude": ["node_modules"]

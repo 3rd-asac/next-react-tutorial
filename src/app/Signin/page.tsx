@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import { FieldError } from 'react-hook-form';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
@@ -32,36 +33,23 @@ function Signin(props) {
     const Idref = useRef(null);
     const Pwref = useRef(null);
 
-    const validId = 'helloworld';
+    const validId = 'helloworld@naver.com';
     const validPw = 'Qwer!234';
-
-    const onSubmit = (data) => {
+    const onerror = (data: any) => {
+        console.log(data);
+        console.log(typeof data);
+        const errorMessages = Object.values(data).map((el: any) => el.message);
+        console.log(errorMessages);
+        dispatch(openModal(errorMessages.join('')));
+    };
+    const onSubmit = (data: any) => {
+        console.log(data);
         if (data.id === validId && data.password === validPw) {
             console.log('로그인 성공!');
-        } else if (data.id !== validId && data.password !== validPw) {
-            dispatch(
-                openModal(
-                    '이메일: @를 포함하여 앞뒤로 한글자 이상의 조건이 필요합니다.비밀번호: 8자 이상 + 특수문자 1개 이상 + 영문 소문자 최소 1개 + 영문 대문자 최소 1개의 조건이 필요합니다.',
-                ),
-            );
-            Idref.current?.focus();
-        } else if (data.id !== validId) {
-            dispatch(
-                openModal(
-                    '이메일 : @를 포함하여 앞뒤로 한글자 이상의 조건이 필요합니다',
-                ),
-            );
-            Idref.current?.focus();
         } else {
-            dispatch(
-                openModal(
-                    ' 비밀번호 : 8자 이상 + 특수문자 1개 이상 + 영문 소문자 최소 1개 + 영문 대문자 최소 1개의 조건이 필요합니다.',
-                ),
-            );
-            Pwref.current?.focus();
+            onerror(data);
         }
     };
-
     const Modalclose = () => {
         dispatch(closeModal());
     };
@@ -91,9 +79,16 @@ function Signin(props) {
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit, onerror)}>
                             <TextField
-                                {...register('id', { required: true })}
+                                {...register('id', {
+                                    pattern: {
+                                        value: /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/,
+                                        message:
+                                            '이메일 : @를 포함하여 앞뒤로 한글자 이상의 조건이 필요합니다',
+                                    },
+                                    required: true,
+                                })}
                                 margin="normal"
                                 fullWidth
                                 id="id"
@@ -101,9 +96,16 @@ function Signin(props) {
                                 name="id"
                                 autoFocus
                             />
-                            {errors.id && <p>아이디를 입력하세요.</p>}
+
                             <TextField
                                 {...register('password', {
+                                    pattern: {
+                                        value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+
+                                        message:
+                                            '비밀번호 : 8자 이상 + 특수문자 1개 이상 + 영문 소문자 최소 1개 + 영문 대문자 최소 1개의 조건이 필요합니다.',
+                                    },
+
                                     required: true,
                                 })}
                                 margin="normal"
@@ -113,7 +115,6 @@ function Signin(props) {
                                 type="password"
                                 id="password"
                             />
-                            {errors.password && <p>비밀번호를 입력하세요.</p>}
 
                             <Button
                                 type="submit"

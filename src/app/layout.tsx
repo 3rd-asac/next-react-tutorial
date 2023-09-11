@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+    //layout 은 서버 클라이언트
     children,
 }: {
     children: React.ReactNode;
