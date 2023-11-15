@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import SvgIcon from '@mui/material/SvgIcon'
+import AbcIcon from '@mui/icons-material/Abc'
 
 export default function Home() {
   return (
@@ -7,8 +9,12 @@ export default function Home() {
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+          <code className={styles.code}>src/app/page.tsx</code>
         </p>
+        <SvgIcon style={{ fontSize: 50 }}>
+          <AbcIcon />
+        </SvgIcon>
+
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
